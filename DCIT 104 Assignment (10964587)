@@ -1,0 +1,37 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[]args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Average of the sum of prime numbers between 1 up to any given number: ");
+        int upto = scanner.nextInt();
+
+        int sum = 0;
+
+        for(int num = 2; num <= upto; num++) {
+
+            int p;
+
+            for(p = 2; p <= (num / 2); p++) {
+
+                if(num % p == 0) {
+                    p = num;
+                    break;
+                }
+            }
+
+
+            if(p != num) {
+                sum += num;
+            }
+        }
+
+        System.out.println("\nSum of all prime numbers upto " + upto + " : " + sum);
+    }
+
+}
